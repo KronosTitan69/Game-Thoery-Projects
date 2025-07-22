@@ -20,7 +20,7 @@ Evaluate system convergence, strategy variance, and identify stable strategies u
 
 🔬 Synthetic Network Generator
 Build realistic hybrid networks combining scale-free and small-world properties for agent-based simulations.
-##2. 🎮 Optimal Control and Evolution in Networked Games
+## 2. 🎮 Optimal Control and Evolution in Networked Games
 
 This repository contains a Python framework for simulating, optimizing, and analyzing **strategic games on complex networks**, including:
 

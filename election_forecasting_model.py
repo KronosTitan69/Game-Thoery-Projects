@@ -82,7 +82,7 @@ class CandidateAttributes:
 @dataclass
 class ElectionResults:
     """Historical election results"""
-    year: int = 2024
+    year: int = 2020
     candidate_votes: Dict[str, int] = field(default_factory=dict)
     party_vote_shares: Dict[str, float] = field(default_factory=dict)
     turnout: float = 0.75
@@ -167,19 +167,19 @@ class DataIngestionProcessor:
                     name="Candidate_A", party="DMK", incumbency_status=True,
                     controversies_score=0.1, campaign_spending=5000000,
                     manifesto_alignment={"economy": 0.8, "social_welfare": 0.9, "infrastructure": 0.7},
-                    historical_performance={"2019": 0.52, "2014": 0.48}
+                    historical_performance={"2014": 0.48, "2009": 0.49}
                 ),
                 CandidateAttributes(
                     name="Candidate_B", party="AIADMK", incumbency_status=False,
                     controversies_score=0.3, campaign_spending=4500000,
                     manifesto_alignment={"economy": 0.7, "social_welfare": 0.8, "infrastructure": 0.8},
-                    historical_performance={"2019": 0.45, "2014": 0.51}
+                    historical_performance={"2014": 0.51, "2009": 0.47}
                 ),
                 CandidateAttributes(
                     name="Candidate_C", party="BJP", incumbency_status=False,
                     controversies_score=0.2, campaign_spending=3000000,
                     manifesto_alignment={"economy": 0.9, "social_welfare": 0.6, "infrastructure": 0.9},
-                    historical_performance={"2019": 0.03, "2014": 0.01}
+                    historical_performance={"2014": 0.01, "2009": 0.02}
                 )
             ]
         else:
@@ -193,11 +193,6 @@ class DataIngestionProcessor:
             # Generate synthetic historical data
             self.historical_results = [
                 ElectionResults(
-                    year=2019,
-                    party_vote_shares={"DMK": 0.52, "AIADMK": 0.45, "BJP": 0.03},
-                    turnout=0.76, winning_margin=0.07
-                ),
-                ElectionResults(
                     year=2014,
                     party_vote_shares={"AIADMK": 0.51, "DMK": 0.48, "BJP": 0.01},
                     turnout=0.74, winning_margin=0.03
@@ -206,6 +201,11 @@ class DataIngestionProcessor:
                     year=2009,
                     party_vote_shares={"DMK": 0.49, "AIADMK": 0.47, "Others": 0.04},
                     turnout=0.72, winning_margin=0.02
+                ),
+                ElectionResults(
+                    year=2004,
+                    party_vote_shares={"DMK": 0.46, "AIADMK": 0.50, "Others": 0.04},
+                    turnout=0.71, winning_margin=0.04
                 )
             ]
         else:
